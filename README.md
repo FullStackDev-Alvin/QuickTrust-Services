@@ -12,6 +12,7 @@ Now head over to creating a <a href="github.com/new">new</a> repo. From the repo
 ```
 yourusername/react-js-tailwind
 ```
+wow awesome
 
 Make your changes to suit your project's needs. 
 
