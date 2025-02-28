@@ -27,7 +27,7 @@ const Listings = () => {
             {selectedComponent === 'rentals' && <Rentals/>}
             {selectedComponent === 'security' && <SecuritySolutions/>}
         </div>
-        <AdBanner/>
+        {/* <AdBanner/> */}
         <NewArrivals/>
     </>
   )

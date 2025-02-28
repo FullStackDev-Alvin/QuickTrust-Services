@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import contactBg from "./contacts/pexels-pixabay-326576.jpg";
 
 function ContactUs() {
+    
   return (
     <div className="w-full flex flex-col gap-[20px] mt-20 p-10" id="contacts">
       {/* Contact Header Section */}

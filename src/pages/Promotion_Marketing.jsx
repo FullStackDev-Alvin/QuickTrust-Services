@@ -9,7 +9,7 @@ const Promotion_Marketing = () => {
     <>
         <Header_2/>
         <PropertyPromotionSection/>
-        <AdBanner/>
+        {/* <AdBanner/> */}
         <NewArrivals/>
     </>
   )

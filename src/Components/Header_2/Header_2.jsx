@@ -9,10 +9,10 @@ const Header_2 = () => {
       <div className="flex flex-col gap-5 items-center md:items-start justify-center w-full md:w-1/2 text-center md:text-left">
         <div className="flex flex-col gap-5 md:gap-10 w-full md:w-4/5 h-auto md:h-[300px] justify-center items-center md:items-start p-2">
           <h1 className="font-semibold text-xl md:text-2xl w-full md:w-[300px]">
-            Wanna Book an appartment or Book a rental vehicle. Then you've come to the right place.
+          Looking to book an apartment or rent a car? You’re in the right place! Whether you need a rental or want to list your property, we’ve got you covered. Contact us today
           </h1>
-          <Link to="/listings" className="w-[200px] text-center bg-button text-primary p-3 rounded-md">
-            Browse Our Collections
+          <Link to="/contact" className="w-[200px] text-center bg-button text-primary p-3 rounded-md">
+            Contact Us
           </Link>
         </div>
       </div>

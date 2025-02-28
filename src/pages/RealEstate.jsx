@@ -9,7 +9,7 @@ const RealEstate = () => {
     <>
         <Header_2/>
         <RentalHostingSection/>
-        <AdBanner/>
+        {/* <AdBanner/> */}
         <NewArrivals/>
     </>
   )

@@ -133,7 +133,7 @@ const RentalHostingSection = () => {
           per night
         </p>
         <Link
-          to="/contacts"
+          to="/contact"
           className="text-white bg-button w-[240px] text-center text-sm px-4 lg:px-5 py-2 lg:py-2.5 focus:outline-none hover:bg-primary hover:shadow-md hover:text-button transition-all duration-7 ease-in-out"
         >
           Contact Us for more Details

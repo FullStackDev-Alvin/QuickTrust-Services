@@ -91,15 +91,15 @@ const LandAcquisition = () => {
       ))}
 
 {showModal && selectedItem && (
-  <div className="w-full h-screen fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-4">
-    <div className="w-full max-w-[900px] h-auto xl:h-[90%] bg-white rounded-lg shadow-lg flex flex-col xl:flex-row overflow-hidden">
+  <div className="w-full h-screen fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-4 z-50">
+    <div className="w-full max-w-[900px] h-auto xl:h-[70%] max-h-[600px] bg-white rounded-lg shadow-lg flex flex-col xl:flex-row overflow-hidden">
       
       {/* Left section for images */}
-      <div className="xl:w-1/2 w-full flex flex-col items-center">
+      <div className="xl:w-1/2 w-full flex flex-col items-center h-full">
         
         {/* Large image display */}
-        <div className="w-full h-[70%] xl:h-[80%] flex justify-center items-center p-2">
-          <img className="w-full max-h-[300px]   h-full object-cover rounded-lg" src={selectedItem.image[selectedImageIndex]} alt="Selected" />
+        <div className="w-full h-[70%] xl:h-[80%] flex justify-center items-center ">
+          <img className="w-full max-h-[500px] h-full object-cover " src={selectedItem.image[selectedImageIndex]} alt="Selected" />
         </div>
 
         {/* Thumbnails */}

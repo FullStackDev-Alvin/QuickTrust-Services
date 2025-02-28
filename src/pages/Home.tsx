@@ -28,9 +28,9 @@ const Home = () => {
               {selectedComponent === 'rentals' && <Rentals/>}
               {selectedComponent === 'security' && <SecuritySolutions/>}
           </div>
-          <ServicesOverview/>
+          {/* <ServicesOverview/> */}
           <WhyChooseUs/>
-          <AdBanner/>
+          {/* <AdBanner/> */}
           <NewArrivals/>
       </>
     )

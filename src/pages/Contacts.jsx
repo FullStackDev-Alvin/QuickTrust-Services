@@ -7,9 +7,9 @@ import NewArrivals from '../Components/NewArrivals/NewArrivals'
 const Contacts = () => {
   return (
     <>
-        <Header_2/>
+        {/* <Header_2/> */}
         <ContactUs/>
-        <AdBanner/>
+        {/* <AdBanner/> */}
         <NewArrivals/>
     </>
   )

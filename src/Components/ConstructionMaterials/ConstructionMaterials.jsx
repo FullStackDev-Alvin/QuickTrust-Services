@@ -67,17 +67,17 @@ function ConstructionMaterials() {
       ))}
 
       {showModal && selectedItem && (
-        <div className="w-full h-screen fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-4">
-          <div className="w-full max-w-[900px] xl:h-[90%] bg-white rounded-lg shadow-lg flex flex-col xl:flex-row overflow-hidden">
+        <div className="w-full h-screen fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-4 z-50">
+          <div className="w-full max-w-[900px] xl:h-[70%] bg-white rounded-lg shadow-lg flex flex-col xl:flex-row overflow-hidden">
             <div className="xl:w-1/2 w-full flex flex-col items-center xl:justify-center">
-              <div className="w-full flex justify-center p-2">
+              <div className="w-full flex justify-center h-[90%]">
                 <img 
-                  className="w-full max-h-[300px] object-cover rounded-lg" 
+                  className="w-full max-h-[500px] h-full object-cover " 
                   src={selectedItem.image[selectedImageIndex]} 
                   alt="Selected" 
                 />
               </div>
-              <div className="w-full flex gap-2 justify-center overflow-x-auto p-2">
+              <div className="w-full h-[30%] xl:h-[20%] flex gap-2 justify-center overflow-x-auto p-2 ">
                 {selectedItem.image.map((image, index) => (
                   <img
                     key={index}
