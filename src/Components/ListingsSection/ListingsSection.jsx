@@ -6,6 +6,7 @@ import landAcquisitionIcon from './Services_Icons/icons8-land-sales-60.png';
 import constructionMaterialsIcon from './Services_Icons/icons8-worker-beard-60.png';
 import carRentalIcon from './Services_Icons/icons8-lease-60.png';
 import securitySolutionsIcon from './Services_Icons/icons8-ptz-camera-60.png';
+import appartments from "./Services_Icons/icons8-apartment-52.png"
 
 const ListingsSection = ({onspanClick }) => {
   return (
@@ -54,6 +55,15 @@ const ListingsSection = ({onspanClick }) => {
             <img src={securitySolutionsIcon} className="w-[60px]" alt="Security Solutions" />
             <h2 className="font-semibold text-lg">Security Solutions</h2>
             <p className="text-sm">Offering advanced technology to enhance security</p>
+          </div>
+        </span>
+
+        {/* rentals Card */}
+        <span  onClick={() => onspanClick('appartments')} className="bg-primary hover:cursor-pointer hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
+          <div className="flex flex-col p-4 w-full shadow-lg min-h-[200px] gap-2 justify-center items-center text-center">
+            <img src={appartments} className="w-[60px]" alt="Security Solutions" />
+            <h2 className="font-semibold text-lg">Rental Appartments</h2>
+            <p className="text-sm">Offering The best Appartments for rental</p>
           </div>
         </span>
       </div>

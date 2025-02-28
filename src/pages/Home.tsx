@@ -9,6 +9,7 @@ import LandAcquisition from '../Components/LandAcquisition/LandAcquisition';
 import ConstructionMaterials from '../Components/ConstructionMaterials/ConstructionMaterials';
 import Rentals from '../Components/Rentals/Rentals';
 import SecuritySolutions from '../Components/SecuritySolutions/SecuritySolutions';
+import Apartments from '../Components/Apartments/Apartments'
 
 const Home = () => {
     const [selectedComponent, setSelectedComponent] = useState('land');
@@ -27,6 +28,7 @@ const Home = () => {
               {selectedComponent === 'construction' && <ConstructionMaterials/>}
               {selectedComponent === 'rentals' && <Rentals/>}
               {selectedComponent === 'security' && <SecuritySolutions/>}
+              {selectedComponent === 'appartments' && <Apartments/>}
           </div>
           {/* <ServicesOverview/> */}
           <WhyChooseUs/>

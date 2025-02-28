@@ -19,6 +19,9 @@ const Navigation = ({ onNavClick }) => {
               <li class="bg-button p-2">
                 <span onClick={() => onNavClick("security")} className="text-gray-900 dark:text-white hover:underline cursor-pointer">Security Solutions</span>
               </li>
+              <li class="bg-button p-2">
+                <span onClick={() => onNavClick("appartments")} className="text-gray-900 dark:text-white hover:underline cursor-pointer">Rental Appartments</span>
+              </li>
             </ul>
           </div>
         </div>

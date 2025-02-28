@@ -6,6 +6,7 @@ import AddLandBlock from "../Components/Admin/AddLandBlock";
 import AddConstructionBlock from "../Components/Admin/AddConstructionBlock";
 // import SecuritySolutions from "../Components/SecuritySolutions/SecuritySolutions";
 import AddSecurityBlock from "../Components/Admin/AddSecurityBlock";
+import AddApartment from "../Components/Admin/AddApartment";
 
 const Admin_edit = () => {
   const [selectedComponent, setSelectedComponent] = useState("new-listings");
@@ -19,6 +20,7 @@ const Admin_edit = () => {
             {selectedComponent === "land" && <AddLandBlock/>}
             {selectedComponent === "construction" && <AddConstructionBlock/>}
             {selectedComponent === "security" && <AddSecurityBlock/>}
+            {selectedComponent === "appartments" && <AddApartment/>}
         </div>
     </>
   )

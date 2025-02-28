@@ -59,7 +59,7 @@ const NewArrivals = () => {
             }}
           >
             {/* Black Blur Overlay */}
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
 
             <div className="relative w-auto p-2 mt-12 h-[100px] flex flex-col gap-2">
               <h2 className="font-semibold text-lg text-bg">{block1.block_title}</h2>
@@ -86,7 +86,7 @@ const NewArrivals = () => {
               }}
             >
               {/* Black Blur Overlay */}
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+              <div className="absolute inset-0 bg-black/40 "></div>
 
               <div className="relative w-auto p-2 mt-12 h-[100px] flex flex-col my-2 gap-2">
                 <h2 className="font-semibold text-lg text-bg">{block2.block_title}</h2>
@@ -111,7 +111,7 @@ const NewArrivals = () => {
             }}
           >
             {/* Black Blur Overlay */}
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
 
             <div className="relative w-auto p-2 mt-12 h-[120px] flex flex-col my-2 gap-2">
               <h2 className="font-semibold text-lg text-bg">{block3.block_title}</h2>
