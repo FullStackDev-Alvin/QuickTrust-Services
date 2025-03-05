@@ -49,7 +49,7 @@ const AddConstructionBlock = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-row gap-[10px]" >
       <div className="max-w-lg w-full m-auto mt-10 p-6 bg-white shadow-md">
         <h2 className="text-lg font-semibold mb-4 text-center">Add A New Block</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

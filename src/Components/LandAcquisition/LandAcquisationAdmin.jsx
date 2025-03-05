@@ -102,7 +102,7 @@ function LandAquisationAdmin() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="w-[94%] m-auto p-5 flex flex-wrap gap-[20px] justify-center">
+    <div className="w-[94%] m-auto p-5 flex flex-wrap gap-[20px] justify-center h-screen overflow-scroll">
       {data.map((item) => (
         <div key={item.id || item._id} className="w-[300px] max-h-[500px] h-auto bg-text p-2 flex flex-col gap-2">
           <img

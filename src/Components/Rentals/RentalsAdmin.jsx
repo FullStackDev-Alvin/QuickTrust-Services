@@ -116,7 +116,7 @@ function RentalsAdmin() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="w-[94%] m-auto p-5 flex flex-wrap gap-[20px] justify-center" id="rentals">
+    <div className="w-[94%] m-auto p-5 flex flex-wrap gap-[20px] justify-center h-screen overflow-scroll" id="rentals">
       {data.map((item) => (
         <div key={item.id} className="relative h-[250px] w-[350px] bg-cover bg-center bg-no-repeat flex flex-col gap-[2px] p-4" style={{ backgroundImage: `url(${item.image[0]})` }}>
           <div className="absolute inset-0 bg-black opacity-50"></div>
