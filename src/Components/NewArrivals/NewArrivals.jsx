@@ -61,7 +61,7 @@ const NewArrivals = () => {
             {/* Black Blur Overlay */}
             <div className="absolute inset-0 bg-black/40"></div>
 
-            <div className="relative w-auto p-2 mt-12 h-[100px] flex flex-col gap-2">
+            <div className="relative w-auto p-2 mt-12 h-[150px] flex flex-col gap-2 justify-center items-start bg-black/80">
               <h2 className="font-semibold text-lg text-bg">{block1.block_title}</h2>
               <p className="text-primary font-light">{block1.block_description}</p>
               <button
@@ -88,7 +88,7 @@ const NewArrivals = () => {
               {/* Black Blur Overlay */}
               <div className="absolute inset-0 bg-black/40 "></div>
 
-              <div className="relative w-auto p-2 mt-12 h-[100px] flex flex-col my-2 gap-2">
+              <div className="relative w-auto p-2 mt-12 h-[100px] flex flex-col my-2 gap-2 justify-center items-start bg-black/80">
                 <h2 className="font-semibold text-lg text-bg">{block2.block_title}</h2>
                 <p className="text-primary font-light">{block2.block_description}</p>
                 <button
@@ -113,7 +113,7 @@ const NewArrivals = () => {
             {/* Black Blur Overlay */}
             <div className="absolute inset-0 bg-black/40"></div>
 
-            <div className="relative w-auto p-2 mt-12 h-[120px] flex flex-col my-2 gap-2">
+            <div className="relative w-auto p-2 mt-12 h-[120px] flex flex-col my-2 gap-2 justify-center items-start bg-black/80">
               <h2 className="font-semibold text-lg text-bg">{block3.block_title}</h2>
               <p className="text-primary font-light">{block3.block_description}</p>
               <button

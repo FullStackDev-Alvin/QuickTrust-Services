@@ -46,7 +46,7 @@ function ConstructionMaterials() {
   return (
     <div className="w-[94%] m-auto p-2 bg-primary flex flex-wrap gap-[30px] justify-center">
       {data.map((item) => (
-        <div key={item.id} className="w-[300px] h-[400px] bg-text p-2 flex flex-col gap-2">
+        <div key={item.id} className="w-[300px] h-auto min-h-[400px] bg-text p-2 flex flex-col gap-2">
           <img src={item.image ? JSON.parse(item.image)[0] : "default-image.jpg"} className="h-1/2 w-full object-cover" alt={item.name} />
           <h1 className="text-button font-semibold text-lg">{item.title}</h1>
           <div>

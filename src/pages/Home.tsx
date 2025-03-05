@@ -20,7 +20,7 @@ const Home = () => {
         };
     return (
       <>
-          <Header_1/>
+          
           <ListingsSection onspanClick={handleNavbarClick}/>
           {/* Render child components based on the selected state */}
           <div>
@@ -30,6 +30,7 @@ const Home = () => {
               {selectedComponent === 'security' && <SecuritySolutions/>}
               {selectedComponent === 'appartments' && <Apartments/>}
           </div>
+          <Header_1/>
           {/* <ServicesOverview/> */}
           <WhyChooseUs/>
           {/* <AdBanner/> */}

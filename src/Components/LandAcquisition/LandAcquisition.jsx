@@ -66,7 +66,7 @@ const LandAcquisition = () => {
       {data.map((item) => (
         <li className="list-none" key={item.id}>
           <div
-            className="relative h-[250px] w-[350px] bg-cover bg-center bg-no-repeat flex flex-col gap-[2px] p-4"
+            className="relative min-h-[250px] h-auto w-[350px] bg-cover bg-center bg-no-repeat flex flex-col gap-[2px] p-4"
             style={{ backgroundImage: `url(${JSON.parse(item.image)[0]})` }} // Display the first image as background
           >
             <div className="absolute inset-0 bg-black opacity-50"></div>

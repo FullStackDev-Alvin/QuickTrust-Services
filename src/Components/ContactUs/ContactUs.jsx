@@ -34,9 +34,9 @@ function ContactUs() {
             <p>
               📍 Office Address: [Company Name], [Physical Address]
               <br />
-              📞 Phone: [General Contact Number]
+              📞 Phone:0790003518 
               <br />
-              📧 Email: [General Email]
+              📧 Email: quicktrustservices@gmail.com
             </p>
           </div>
 
@@ -45,9 +45,9 @@ function ContactUs() {
             <p>
               For inquiries about available apartments, pricing, and reservations.
               <br />
-              📞 Phone: [Rental Contact Number]
+              📞 Phone:0790003518 
               <br />
-              📧 Email: [Rental Email]
+              📧 Email: quicktrustservices@gmail.com
             </p>
           </div>
 
@@ -69,9 +69,9 @@ function ContactUs() {
               For property owners looking to list their apartments or require hosting
               and maintenance services.
               <br />
-              📞 Phone: [Hosting Contact Number]
+              📞 Phone:0790003518 
               <br />
-              📧 Email: [Hosting Email]
+              📧 Email: quicktrustservices@gmail.com
             </p>
           </div>
 
@@ -81,9 +81,9 @@ function ContactUs() {
               For businesses and property owners interested in marketing services,
               digital promotions, and advertising.
               <br />
-              📞 Phone: [Marketing Contact Number]
+              📞 Phone:0790003518 
               <br />
-              📧 Email: [Marketing Email]
+              📧 Email: quicktrustservices@gmail.com
             </p>
           </div>
 
@@ -92,9 +92,9 @@ function ContactUs() {
             <p>
               For assistance with ongoing rentals, service issues, or complaints.
               <br />
-              📞 Phone: [Support Contact Number]
+              📞 Phone:0790003518 
               <br />
-              📧 Email: [Support Email]
+              📧 Email: quicktrustservices@gmail.com
             </p>
           </div>
 
@@ -104,9 +104,9 @@ function ContactUs() {
               For real estate agencies, developers, or service providers looking for
               partnership opportunities.
               <br />
-              📞 Phone: [Partnership Contact Number]
+              📞 Phone:0790003518 
               <br />
-              📧 Email: [Partnership Email]
+              📧 Email: quicktrustservices@gmail.com 
             </p>
           </div>
         </div>

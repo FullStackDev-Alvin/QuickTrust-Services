@@ -54,7 +54,7 @@ function Apartments() {
   return (
     <div
       key={item.id}
-      className="relative h-[250px] w-[350px] bg-cover bg-no-repeat flex flex-col gap-[2px] p-4"
+      className="relative min-h-[250px] h-auto w-[350px] bg-cover bg-no-repeat flex flex-col gap-[2px] p-4"
       style={{ backgroundImage: `url(${firstImage})` }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
