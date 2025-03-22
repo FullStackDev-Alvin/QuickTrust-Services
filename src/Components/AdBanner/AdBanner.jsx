@@ -1,58 +1,69 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-const gifs = [
+const ads = [
   "./Ads/bird-cctv.gif",
-  "./Ads/1.jpeg",
-  "./Ads/2.jpeg", 
+  "./Ads/WhatsApp Image 2025-03-22 at 2.25.00 PM.jpeg",
+  "./Ads/6f349cd5.jpg", 
   "./Ads/spy-camera.gif",
-  "./Ads/3.jpeg",
-  "./Ads/4.jpeg",
-  "./Ads/Add a heading.png",
-  // "./Ads/car-rental-in-port-louis-rent-a-car-in-port-louis (1).gif",
-  // "./Ads/cars-sunday.gif",
-  // "./Ads/caught-in-4k-caught-in-walton.gif",
-  // "./Ads/japanese-mazda-premacy2016-japanese-used-car.gif",
-  // "./Ads/sobha-projects-sobha-projects-bangalore.gif",
-  // "./Ads/mauritius-car-rental.gif"
-];
-
-const exitAnimations = [
-  { opacity: 0, x: -100 },
-  { opacity: 0, x: 100 },
-  { opacity: 0, y: -100 },
-  { opacity: 0, y: 100 },
-  { scale: 0 },
-  { rotate: 90, opacity: 0 }
+  "./Ads/best-in-buidings.jpg",
+  "./Ads/WhatsApp Image 2025-03-22 at 2.24.56 PM.jpeg",
+  "./Ads/Add a heading.png"
 ];
 
 const AdBanner = () => {
-  const [currentGif, setCurrentGif] = useState(0);
-  const [exitAnimIndex, setExitAnimIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    if (paused) return;
+
     const interval = setInterval(() => {
-      setExitAnimIndex(Math.floor(Math.random() * exitAnimations.length));
-      setCurrentGif((prev) => (prev + 1) % gifs.length);
-    }, 4000);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % ads.length);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [paused]);
 
   return (
-    <div className="min-w-5xl m-auto mt-10 p-6 flex flex-row gap-2">
-      {[0, 1, 2, 3, 4].map((offset) => (
-        <motion.img 
-          key={offset} 
-          src={gifs[(currentGif + offset) % gifs.length]} 
-          className="w-full h-48 object-contain rounded-lg shadow-lg" 
-          alt="Advertisement Banner" 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={exitAnimations[exitAnimIndex]}
-          transition={{ duration: 0.5 }}
-        />
-      ))}
+    <div className="w-full p-4">
+      {/* Laptop View - Looping Ads */}
+      <div className="hidden md:grid grid-cols-4 gap-4">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <motion.img
+            key={index}
+            src={ads[(currentIndex + index) % ads.length]} 
+            className="w-full h-48 object-cover rounded-lg shadow-md"
+            alt="Ad"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 0.7 }}
+          />
+        ))}
+      </div>
+
+      {/* Mobile View - Single Scrolling Ad */}
+      <div
+        className="relative block md:hidden w-full h-60 overflow-hidden rounded-lg shadow-md"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setPaused(false)}
+      >
+        <AnimatePresence>
+          <motion.img
+            key={ads[currentIndex]}
+            src={ads[currentIndex]}
+            className="absolute inset-0 w-full h-full object-cover rounded-lg"
+            alt="Ad Banner"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 0.7 }}
+          />
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
