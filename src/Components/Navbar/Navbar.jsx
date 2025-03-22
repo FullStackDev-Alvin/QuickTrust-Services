@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import icon from "/icon.webp"
+import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -87,47 +88,63 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
+{/* Navigation Menu */}
+<div className="items-center justify-between w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+  {/* Desktop Menu (Always Visible) */}
+  <ul className="hidden lg:flex flex-row space-x-8 font-medium">
+    {[
+      { path: "/", label: "Home" },
+      { path: "/real-estate", label: "Real Estate" },
+      { path: "/promotion-marketing", label: "Promotion & Marketing" },
+      { path: "/listings", label: "Listings" },
+      { path: "/contact", label: "Contact" },
+      ...(token ? [{ path: "/admin/edit", label: "Admin Edit" }] : []),
+    ].map((item, index) => (
+      <li key={index}>
+        <Link
+          to={item.path}
+          className={`block py-2 font-semibold ${isActive(item.path) ? "text-primary" : "text-secondary"}`}
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
 
-          {/* Navigation Menu */}
-          <div
-            className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 ${isMenuOpen ? "block" : "hidden"}`}
-            id="mobile-menu-2"
-          >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-              <li>
-                <Link to="/" className={`block py-2 pl-3 pr-4 font-semibold lg:p-0 ${isActive("/") ? "text-primary" : "text-secondary"}`}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/real-estate" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/real-estate") ? "text-primary" : "text-secondary"}`}>
-                  Real Estate
-                </Link>
-              </li>
-              <li>
-                <Link to="/promotion-marketing" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/promotion-marketing") ? "text-primary" : "text-secondary"}`}>
-                  Promotion & Marketing
-                </Link>
-              </li>
-              <li>
-                <Link to="/listings" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/listings") ? "text-primary" : "text-secondary"}`}>
-                  Listings
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/contact") ? "text-primary" : "text-secondary"}`}>
-                  Contact
-                </Link>
-              </li>
-              {token ? (
-                <li>
-                <Link to="/admin/edit" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/contact") ? "text-primary" : "text-secondary"}`}>
-                  Admin Edit
-                </Link>
-              </li>
-              ) : (<></>)}
-            </ul>
-          </div>
+  {/* Mobile Menu (Animated) */}
+  <AnimatePresence>
+    {isMenuOpen && (
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="absolute top-full left-0 w-full bg-bg p-4 shadow-lg lg:hidden"
+      >
+        <ul className="flex flex-col mt-4 font-medium">
+          {[
+            { path: "/", label: "Home" },
+            { path: "/real-estate", label: "Real Estate" },
+            { path: "/promotion-marketing", label: "Promotion & Marketing" },
+            { path: "/listings", label: "Listings" },
+            { path: "/contact", label: "Contact" },
+            ...(token ? [{ path: "/admin/edit", label: "Admin Edit" }] : []),
+          ].map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item.path}
+                onClick={() => setIsMenuOpen(false)} // Closes menu on click
+                className={`block py-2 font-semibold ${isActive(item.path) ? "text-primary" : "text-secondary"}`}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
         </div>
       </nav>
     </div>

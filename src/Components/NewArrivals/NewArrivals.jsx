@@ -153,41 +153,51 @@ const NewArrivals = () => {
 
       {/* Modal */}
 
-      <AnimatePresence>
-      {isModalOpen && selectedBlock && (
-
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 ">
-        <motion.div 
-          variants={modalVariants} initial="hidden" animate="visible" exit="exit">
-        <motion.div className="flex justify-center mt-[50%] md:mt-[25%] lg:mt-[15%] items-center z-50">
-          <div className="bg-white rounded-lg flex flex-row w-[40%] min-w-[500px]  h-[60%]">
-            <div className="w-[50%] h-full">
-              <img
-                src={selectedBlock.block_image}
-                alt={selectedBlock.block_title}
-                className="w-full h-full object-cover min-h-[400px] "
-              />
-            </div>
-            <div className="w-[50%] h-fuil flex justify-center items-center ">
-              <div className="w-[60%] h-[60%] flex flex-col gap-[10px]">
-                <h2 className="text-xl font-semibold text-button">{selectedBlock.block_title}</h2>
-                <p className="text-bg">{selectedBlock.block_description}</p>
-                <Link to='/contact' className="bg-button text-bg w-[100px] text-center p-2 hover:bg-primary hover:shadow-lg hover:text-button rounded-lg">Contact Us</Link>
-              </div>
-            </div>
-          </div>
-          <button
-              onClick={handleCloseModal}
-              className="absolute top-[10%] right-[25%] text-lg text-bg p-2  rounded-full bg-button font-bold"
-            >
-              <img className="rounded-full w-[30px] h-[30px]" src={cancel} alt="" />
-            </button>
-            </motion.div>
-            </motion.div>
+    <AnimatePresence>
+  {isModalOpen && selectedBlock && (
+    <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50 p-4 z-50">
+      <motion.div 
+        variants={modalVariants} 
+        initial="hidden" 
+        animate="visible" 
+        exit="exit"
+        className="w-full max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg bg-white rounded-xl shadow-2xl flex flex-col md:flex-row overflow-hidden"
+      >
+        {/* Left - Image Section */}
+        <div className="w-full md:w-1/2">
+          <img
+            src={selectedBlock.block_image}
+            alt={selectedBlock.block_title}
+            className="w-full h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+          />
         </div>
 
-      )}
-      </AnimatePresence>
+        {/* Right - Content Section */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-6">
+          <h2 className="text-2xl font-semibold text-button mb-2">{selectedBlock.block_title}</h2>
+          <p className="text-base text-bg text-center md:text-left">{selectedBlock.block_description}</p>
+
+          <Link
+            to="/contact"
+            className="mt-4 bg-button text-bg w-[120px] text-center py-2 px-4 rounded-lg font-semibold 
+                      hover:bg-primary hover:shadow-lg hover:text-button transition duration-300"
+          >
+            Contact Us
+          </Link>
+        </div>
+
+        {/* Close Button */}
+        <button
+          onClick={handleCloseModal}
+          className="absolute top-4 right-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 transition"
+        >
+          <img className="w-6 h-6" src={cancel} alt="Close" />
+        </button>
+      </motion.div>
+    </div>
+  )}
+</AnimatePresence>
+
     </div>
   );
 };

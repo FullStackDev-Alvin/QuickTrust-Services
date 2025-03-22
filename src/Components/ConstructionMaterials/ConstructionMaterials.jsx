@@ -90,28 +90,26 @@ function ConstructionMaterials() {
           </div>
         </motion.div>
       ))}
-      <AnimatePresence>
-      {showModal && selectedItem && (
-
-          
-        <div className="w-full h-screen fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-4 z-50">
-        <motion.div 
-         variants={modalVariants} initial="hidden" animate="visible" exit="exit">
-        <motion.div >
-          <div className="w-full min-w-[900px] max-w-[900px] xl:h-[70%] bg-white rounded-lg shadow-lg flex flex-col xl:flex-row overflow-hidden">
+ <AnimatePresence>
+  {showModal && selectedItem && (
+    <div className="w-full h-screen fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-4 z-50">
+      <motion.div variants={modalVariants} initial="hidden" animate="visible" exit="exit">
+        <motion.div>
+          <div className="w-full max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-[900px] bg-white rounded-lg shadow-lg flex flex-col xl:flex-row overflow-hidden">
+            {/* Image Section */}
             <div className="xl:w-1/2 w-full flex flex-col items-center xl:justify-center">
-              <div className="w-full flex justify-center h-[90%]">
+              <div className="w-full flex justify-center h-auto max-h-[500px] p-2">
                 <img 
-                  className="w-full max-h-[500px] h-full object-cover " 
+                  className="w-full h-auto object-cover" 
                   src={selectedItem.image[selectedImageIndex]} 
                   alt="Selected" 
                 />
               </div>
-              <div className="w-full h-[30%] xl:h-[20%] flex gap-2 justify-center overflow-x-auto p-2 ">
+              <div className="w-full h-auto flex gap-2 justify-center overflow-x-auto p-2">
                 {selectedItem.image.map((image, index) => (
                   <img
                     key={index}
-                    className={`h-[60px] w-[60px] object-cover cursor-pointer border-2 ${index === selectedImageIndex ? 'border-button' : 'border-transparent'}`}
+                    className={`h-[50px] w-[50px] md:h-[60px] md:w-[60px] object-cover cursor-pointer border-2 ${index === selectedImageIndex ? 'border-button' : 'border-transparent'}`}
                     src={image}
                     alt={`Thumbnail ${index + 1}`}
                     onClick={() => setSelectedImageIndex(index)}
@@ -120,8 +118,9 @@ function ConstructionMaterials() {
               </div>
             </div>
 
-            <div className="xl:w-1/2 w-full p-6 flex flex-col gap-4 xl:justify-center">
-              <h1 className="font-bold text-xl text-bg">
+            {/* Details Section */}
+            <div className="xl:w-1/2 w-full p-4 md:p-6 flex flex-col gap-3 md:gap-4 xl:justify-center">
+              <h1 className="font-bold text-lg md:text-xl text-bg">
                 <span className="text-button">Material Name: </span>{selectedItem.title}
               </h1>
               <p className="text-bg"><span className="text-button">Details: </span>{selectedItem.short_description}</p>
@@ -132,16 +131,20 @@ function ConstructionMaterials() {
               </Link>
             </div>
           </div>
-          <button className="bg-button p-2  rounded-full text-sm md:text-base font-bold fixed right-[5%] top-[10%] text-primary " onClick={() => setShowModal(false)}>
-              <img className="rounded-full w-[30px] h-[30px]" src={cancel} alt="" />
+
+          {/* Close Button */}
+          <button 
+            className="bg-button p-2 rounded-full text-sm md:text-base font-bold fixed right-[5%] top-[5%] md:top-[8%] xl:top-[10%] text-primary"
+            onClick={() => setShowModal(false)}
+          >
+            <img className="rounded-full w-[25px] h-[25px] md:w-[30px] md:h-[30px]" src={cancel} alt="Close" />
           </button>
-          </motion.div>
-          </motion.div>
-        </div>
-        
-        
-      )}
-      </AnimatePresence>
+        </motion.div>
+      </motion.div>
+    </div>
+  )}
+</AnimatePresence>
+
 
     </div>
   </motion.div>     

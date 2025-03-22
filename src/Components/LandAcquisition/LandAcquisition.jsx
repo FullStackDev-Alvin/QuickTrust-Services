@@ -122,69 +122,79 @@ const LandAcquisition = () => {
         </motion.div>
       ))}
 
-      <AnimatePresence>
-        {showModal && selectedItem && (
-            <div className="w-full h-screen fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-4 z-50">
-            <motion.div 
-                className=""
-                variants={modalVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-            <motion.div 
-                className="w-full max-w-[900px] h-auto xl:h-[70%] max-h-[600px] bg-white rounded-lg shadow-lg flex flex-col xl:flex-row overflow-hidden"
-                variants={contentVariants}
-              >
-              <div className="w-full min-w-[900px] max-w-[900px] h-auto xl:h-[70%] max-h-[600px] bg-white rounded-lg shadow-lg flex flex-col xl:flex-row overflow-hidden">
-      
-                {/* Left section for images */}
-                <div className="xl:w-1/2 w-full flex flex-col items-center h-full">
-                  <div className="w-full h-[70%] xl:h-[80%] flex justify-center items-center ">
-                    <img 
-                      className="w-full max-h-[500px] h-full object-cover" 
-                      src={selectedItem.image[selectedImageIndex]} 
-                      alt="Selected" 
-                    />
-                  </div>
-
-                  {/* Thumbnails */}
-                  <div className="w-full h-[30%] xl:h-[20%] flex gap-2 justify-center overflow-x-auto p-2">
-                    {selectedItem.image.map((image, index) => (
-                      <img
-                        key={index}
-                        className={`h-[50px] w-[50px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px] object-cover cursor-pointer border-2 
-                        ${index === selectedImageIndex ? 'border-button' : 'border-transparent'}`}
-                        src={image}
-                        alt={`Thumbnail ${index + 1}`}
-                        onClick={() => setSelectedImageIndex(index)}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Right section for details */}
-                <div className="xl:w-1/2 w-full p-6 flex flex-col gap-4 justify-center">
-                  <h1 className="font-bold text-xl md:text-2xl text-bg">
-                    <span className="text-button font-bold">Title: </span>{selectedItem.land_title}
-                  </h1>
-                  <p className="text-bg sm md:text-bg base"><span className="text-button font-bold">Description: </span>{selectedItem.land_description}</p>
-                  <p className="text-bg sm md:text-bg base"><span className="text-button font-bold">Location: </span>{selectedItem.location}</p>
-                  <p className="text-bg sm md:text-bg base"><span className="text-button font-bold">Availability: </span>{selectedItem.drop_off_info}</p>
-                  <p className="text-bg sm md:text-bg base"><span className="text-button font-bold">Price: </span>{selectedItem.price_details}</p>
-                  <Link to="/contact" className="bg-button p-2 text-sm md:text-base w-[120px] text-center  hover:bg-primary hover:text-button hover:shadow-lg transition-all duration-200 text-primary font-bold">
-                    Contact Us
-                  </Link>
-                </div>
-                <button className="bg-button p-2  rounded-full text-sm md:text-bg base font-bold fixed right-[5%] top-[10%] text-bg  " onClick={() => setShowModal(false)}>
-                    <img className="rounded-full w-[30px] h-[30px]" src={cancel} alt="" />
-                </button>
-                </div>
-                </motion.div>
-                </motion.div>
+    <AnimatePresence>
+      {showModal && selectedItem && (
+        <div className="fixed inset-0 w-full h-screen flex justify-center items-center bg-black bg-opacity-50 p-4 z-50">
+          <motion.div
+            className="w-full max-w-[900px] h-auto bg-white rounded-lg shadow-xl flex flex-col md:flex-row overflow-hidden"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Left Section - Image */}
+            <div className="md:w-1/2 w-full flex flex-col items-center p-4">
+              <div className="w-full h-[250px] md:h-[350px] flex justify-center items-center">
+                <img
+                  className="w-full h-full object-cover rounded-md"
+                  src={selectedItem.image[selectedImageIndex]}
+                  alt="Selected"
+                />
               </div>
-        )}
-      </AnimatePresence>
+
+              {/* Image Thumbnails */}
+              <div className="w-full flex gap-2 overflow-x-auto p-2 mt-2">
+                {selectedItem.image.map((image, index) => (
+                  <img
+                    key={index}
+                    className={`h-[50px] w-[50px] md:h-[60px] md:w-[60px] object-cover cursor-pointer rounded-md transition-all ${
+                      index === selectedImageIndex ? "border-2 border-button shadow-lg" : "border border-gray-300"
+                    }`}
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                    onClick={() => setSelectedImageIndex(index)}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Right Section - Details */}
+            <div className="md:w-1/2 w-full p-6 flex flex-col gap-3 text-bg">
+              <h1 className="text-lg md:text-2xl font-bold text-bg">
+                <span className="text-button">Title:</span> {selectedItem.land_title}
+              </h1>
+              <h3 className="text-sm md:text- text-bg font-bold">
+                <span className="text-button font-bold">Description:</span> {selectedItem.land_description}
+              </h3>
+              <h3 className="text-sm md:text- text-bg font-bold">
+                <span className="text-button font-bold">Location:</span> {selectedItem.location}
+              </h3>
+              <h3 className="text-sm md:text- text-bg font-bold">
+                <span className="text-button font-bold">Availability:</span> {selectedItem.drop_off_info}
+              </h3>
+              <h3 className="text-sm md:text- text-bg font-bold">
+                <span className="text-button">Price:</span> {selectedItem.price_details}
+              </h3>
+
+              <Link
+                to="/contact"
+                className="bg-button text-primary text-center py-2 px-4 hover:bg-primary hover:text-button hover:shadow-lg transition duration-300 w-[120px] font-bold"
+              >
+                Contact Us
+              </Link>
+            </div>
+
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 transition"
+              onClick={() => setShowModal(false)}
+            >
+              <img className="w-6 h-6" src={cancel} alt="Close" />
+            </button>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
     </motion.div>
   );
 };
