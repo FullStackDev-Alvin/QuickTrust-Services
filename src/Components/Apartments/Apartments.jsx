@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ApartmentAdmin from "./ApartmentAdmin";
 import { motion, AnimatePresence } from "framer-motion";
-import cancel from "./assets/icons8-cancel.gif"
+import cancel from "/icons8-cancel.gif"
 function Apartments() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

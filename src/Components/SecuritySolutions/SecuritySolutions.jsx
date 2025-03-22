@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import cancel from "./security_solutions/icons8-cancel.gif"
+import cancel from "/icons8-cancel.gif"
 function SecuritySolutions() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

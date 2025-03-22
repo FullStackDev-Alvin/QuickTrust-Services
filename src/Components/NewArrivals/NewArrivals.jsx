@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import cancel from "./Arivals/icons8-cancel.gif"
+import cancel from "/icons8-cancel.gif"
 
 const NewArrivals = () => {
   const [blocks, setBlocks] = useState([]);

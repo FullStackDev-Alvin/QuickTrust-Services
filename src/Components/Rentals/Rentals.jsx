@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import cancel from "./car_dealership/icons8-cancel.gif"
+import cancel from "/icons8-cancel.gif"
 function Rentals() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
