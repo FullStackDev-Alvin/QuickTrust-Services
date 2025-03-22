@@ -49,7 +49,7 @@ const AddLandBlock = () => {
 
     try {
       const response = await axios.post(
-        "https://quicktrustservices-i6rr.vercel.app/api/land_aquisition/",
+        "http://localhost:5000/api/land_aquisition/",
         formData,
         {
           headers: {

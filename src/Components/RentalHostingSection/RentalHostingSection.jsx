@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 // Import images as variables
 import apartmentImage1 from './appartments/0V0A3489.jpg';
 import apartmentImage2 from './appartments/0V0A3307.jpg';
@@ -26,14 +26,15 @@ const RentalHostingSection = () => {
     <div className="w-full mt-20">
       <div className="p-10 w-[100%] flex flex-col gap-[50px]">
         <div className="flex flex-col gap-[20px]">
+        <motion.div className="flex flex-col gap-[20px]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <h1 className="text-text font-bold text-2xl">Apartment Rentals & Hosting Services</h1>
           <p>
             Discover premium living with our exclusive apartment rentals and comprehensive hosting services,
             designed to cater to your unique needs. Whether you're looking for a short-term stay, long-term lease,
             or an investment in rental property, we provide seamless solutions for both guests and property owners.
           </p>
-        </div>
-        <div className="flex flex-col gap-[20px]">
+        </motion.div>
+        <motion.div className="flex flex-col gap-[20px]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
           <h1 className="text-text font-bold text-xl">Why Choose Our Rental & Hosting Services?</h1>
           <p>
             Premium Apartments – Fully furnished, modern, and strategically located properties for maximum comfort.
@@ -42,18 +43,21 @@ const RentalHostingSection = () => {
             for both guests and property owners. Tailored Rental Solutions – Flexible options to suit different budgets
             and preferences. Looking for the perfect stay or a stress-free way to host? Contact us today!
           </p>
+        </motion.div>
         </div>
       </div>
       <div>
         <section>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-2.5 lg:pb-16 pb-10">
-              <h2 className="w-full text-center text-gray-900 text-2xl font-bold font-manrope leading-normal">
+            <motion.div className="grid gap-2.5 lg:pb-16 pb-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9, delay: 0.4 }}>
+              <h2 className="w-full text-center text-primary text-2xl font-bold font-manrope leading-normal">
                 Our Rental Appartments
               </h2>
-              <div className="w-full text-center text-gray-600 text-lg font-normal leading-8">
+              <div className="w-full text-center text-primary text-lg font-normal leading-8">
                 Step into a realm of comfort.
               </div>
+            </motion.div>
             </div>
             <div className="gallery">
               <div className="flex flex-col mb-10">
@@ -121,8 +125,10 @@ const RentalHostingSection = () => {
         </section>
       </div>
       <div className="p-10 flex flex-col w-[100%] gap-[30px]">
-        <h1 className="text-xl font-bold text-text">Our Apartment Options & Pricing</h1>
-        <p className="w-[80%]">
+      <motion.h1 className="text-xl font-bold text-text" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}>
+          Our Apartment Options & Pricing
+        </motion.h1>
+        <motion.p className="w-[80%]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.8 }}>
           Studio Apartments – Ideal for solo travelers or couples. Starting at $XXX per month | $XX per night
           <br />
           1-Bedroom Apartments – Perfect for professionals or small families. Starting at $XXX per month | $XX per night
@@ -131,13 +137,15 @@ const RentalHostingSection = () => {
           <br />
           Luxury Suites & Penthouses – Exclusive high-end stays with premium amenities. Starting at $XXX per month | $XX
           per night
-        </p>
-        <Link
-          to="/contact"
-          className="text-white bg-button w-[240px] text-center text-sm px-4 lg:px-5 py-2 lg:py-2.5 focus:outline-none hover:bg-primary hover:shadow-md hover:text-button transition-all duration-7 ease-in-out"
-        >
-          Contact Us for more Details
-        </Link>
+        </motion.p>
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 1 }}>
+          <Link
+            to="/contact"
+            className="text-white bg-button w-[240px] text-center text-sm px-4 lg:px-5 py-2 lg:py-2.5 focus:outline-none hover:bg-primary hover:shadow-md hover:text-button transition-all duration-7 ease-in-out"
+          >
+            Contact Us for more Details
+          </Link>
+        </motion.div>
       </div>
     </div>
   );

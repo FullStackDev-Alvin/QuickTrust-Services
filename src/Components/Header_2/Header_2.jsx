@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header_2 = () => {
   return (
-    <div className="w-full p-5 md:p-10 flex flex-col h-screen md:flex-row items-center bg-light_grey justify-between">
+    <div className="w-full p-5 md:p-10 flex flex-col h-screen md:flex-row items-center bg-bg justify-between">
       {/* Left Section */}
       <div className="flex flex-col gap-5 items-center md:items-start justify-center w-full md:w-1/2 text-center md:text-left">
         <div className="flex flex-col gap-5 md:gap-10 w-full md:w-4/5 h-auto md:h-[300px] justify-center items-center md:items-start p-2">

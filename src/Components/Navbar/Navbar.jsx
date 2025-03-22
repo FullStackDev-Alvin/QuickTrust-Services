@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import icon from "/icon.webp"
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -38,7 +38,8 @@ const Navbar = () => {
     <div className="flex w-full flex-row py-[20px]">
       <nav className="bg-bg py-2.5 w-full fixed z-20 top-0 start-0 border-b-2 border-gray-200">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center h-[40px] flex-row gap-[5px]">
+            <img src={icon} className="w-full h-full" alt="" />
             <span className="self-center text-xl font-bold whitespace-nowrap text-text">
               QuickTrust - Services
             </span>
@@ -94,33 +95,33 @@ const Navbar = () => {
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
-                <Link to="/" className={`block py-2 pl-3 pr-4 font-semibold lg:p-0 ${isActive("/") ? "text-button" : "text-gray-700"}`}>
+                <Link to="/" className={`block py-2 pl-3 pr-4 font-semibold lg:p-0 ${isActive("/") ? "text-primary" : "text-secondary"}`}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/real-estate" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/real-estate") ? "text-button" : "text-gray-700"}`}>
+                <Link to="/real-estate" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/real-estate") ? "text-primary" : "text-secondary"}`}>
                   Real Estate
                 </Link>
               </li>
               <li>
-                <Link to="/promotion-marketing" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/promotion-marketing") ? "text-button" : "text-gray-700"}`}>
+                <Link to="/promotion-marketing" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/promotion-marketing") ? "text-primary" : "text-secondary"}`}>
                   Promotion & Marketing
                 </Link>
               </li>
               <li>
-                <Link to="/listings" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/listings") ? "text-button" : "text-gray-700"}`}>
+                <Link to="/listings" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/listings") ? "text-primary" : "text-secondary"}`}>
                   Listings
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/contact") ? "text-button" : "text-gray-700"}`}>
+                <Link to="/contact" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/contact") ? "text-primary" : "text-secondary"}`}>
                   Contact
                 </Link>
               </li>
               {token ? (
                 <li>
-                <Link to="/admin/edit" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/contact") ? "text-button" : "text-gray-700"}`}>
+                <Link to="/admin/edit" className={`block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-button lg:p-0 ${isActive("/contact") ? "text-primary" : "text-secondary"}`}>
                   Admin Edit
                 </Link>
               </li>

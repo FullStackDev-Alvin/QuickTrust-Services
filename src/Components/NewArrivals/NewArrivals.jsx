@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { motion, AnimatePresence } from "framer-motion";
+import cancel from "./Arivals/icons8-cancel.gif"
 
 const NewArrivals = () => {
   const [blocks, setBlocks] = useState([]);
@@ -12,7 +14,7 @@ const NewArrivals = () => {
   useEffect(() => {
     const fetchBlocks = async () => {
       try {
-        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/new_arrivals");
+        const response = await axios.get("http://localhost:5000/api/new_arrivals");
         setBlocks(response.data);
       } catch (err) {
         setError(err.message);
@@ -41,6 +43,26 @@ const NewArrivals = () => {
   const block2 = blocks.find((item) => item.block_id === 2);
   const block3 = blocks.find((item) => item.block_id === 3);
 
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+  const modalVariants = {
+    hidden: { y: "-100vh", opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { type: "spring", stiffness: 100, damping: 10 } 
+    },
+    exit: { y: "100vh", opacity: 0, transition: { duration: 0.3 } },
+  };
   return (
     <div className="w-full max-w-screen-xl m-auto h-auto p-10 flex flex-col gap-2">
       <div className="flex flex-row justify-start items-center gap-6">
@@ -62,7 +84,7 @@ const NewArrivals = () => {
             <div className="absolute inset-0 bg-black/40"></div>
 
             <div className="relative w-auto p-2 mt-12 h-[150px] flex flex-col gap-2 justify-center items-start bg-black/80">
-              <h2 className="font-semibold text-lg text-bg">{block1.block_title}</h2>
+              <h2 className="font-semibold text-lg text-primary">{block1.block_title}</h2>
               <p className="text-primary font-light">{block1.block_description}</p>
               <button
                 onClick={() => handleViewClick(block1)}
@@ -89,7 +111,7 @@ const NewArrivals = () => {
               <div className="absolute inset-0 bg-black/40 "></div>
 
               <div className="relative w-auto p-2 mt-12 h-[100px] flex flex-col my-2 gap-2 justify-center items-start bg-black/80">
-                <h2 className="font-semibold text-lg text-bg">{block2.block_title}</h2>
+                <h2 className="font-semibold text-lg text-primary">{block2.block_title}</h2>
                 <p className="text-primary font-light">{block2.block_description}</p>
                 <button
                   onClick={() => handleViewClick(block2)}
@@ -114,7 +136,7 @@ const NewArrivals = () => {
             <div className="absolute inset-0 bg-black/40"></div>
 
             <div className="relative w-auto p-2 mt-12 h-[120px] flex flex-col my-2 gap-2 justify-center items-start bg-black/80">
-              <h2 className="font-semibold text-lg text-bg">{block3.block_title}</h2>
+              <h2 className="font-semibold text-lg text-primary">{block3.block_title}</h2>
               <p className="text-primary font-light">{block3.block_description}</p>
               <button
                 onClick={() => handleViewClick(block3)}
@@ -130,33 +152,42 @@ const NewArrivals = () => {
       </div>
 
       {/* Modal */}
+
+      <AnimatePresence>
       {isModalOpen && selectedBlock && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg flex flex-row w-[40%] min-w-[500px] h-[60%]">
+
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 ">
+        <motion.div 
+          variants={modalVariants} initial="hidden" animate="visible" exit="exit">
+        <motion.div className="flex justify-center mt-[50%] md:mt-[25%] lg:mt-[15%] items-center z-50">
+          <div className="bg-white rounded-lg flex flex-row w-[40%] min-w-[500px]  h-[60%]">
             <div className="w-[50%] h-full">
               <img
                 src={selectedBlock.block_image}
                 alt={selectedBlock.block_title}
-                className="w-full h-full object-cover "
+                className="w-full h-full object-cover min-h-[400px] "
               />
             </div>
             <div className="w-[50%] h-fuil flex justify-center items-center ">
               <div className="w-[60%] h-[60%] flex flex-col gap-[10px]">
                 <h2 className="text-xl font-semibold text-button">{selectedBlock.block_title}</h2>
-                <p>{selectedBlock.block_description}</p>
-                <Link to='/contact' className="bg-button text-primary w-[100px] text-center p-2 hover:bg-primary hover:shadow-lg hover:text-button rounded-lg">Contact Us</Link>
+                <p className="text-bg">{selectedBlock.block_description}</p>
+                <Link to='/contact' className="bg-button text-bg w-[100px] text-center p-2 hover:bg-primary hover:shadow-lg hover:text-button rounded-lg">Contact Us</Link>
               </div>
             </div>
           </div>
           <button
               onClick={handleCloseModal}
-              className="absolute top-[10%] right-[25%] text-lg text-primary p-2  rounded-lg bg-button font-bold"
+              className="absolute top-[10%] right-[25%] text-lg text-bg p-2  rounded-full bg-button font-bold"
             >
-              close
+              <img className="rounded-full w-[30px] h-[30px]" src={cancel} alt="" />
             </button>
-            
+            </motion.div>
+            </motion.div>
         </div>
+
       )}
+      </AnimatePresence>
     </div>
   );
 };

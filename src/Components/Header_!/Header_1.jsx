@@ -6,9 +6,10 @@ import topImage from './Hero/Top.png';
 import bLeftImage from './Hero/b-left.png';
 import bRightImage from './Hero/b-right.png';
 
+
 const Header_1 = () => {
   return (
-    <div className="w-full p-5 md:p-10 flex flex-col mt-8 md:flex-row items-center bg-light_grey">
+    <div className="w-full p-5 md:p-10 flex flex-col mt-8 md:flex-row items-center bg-bg">
       {/* Left Section */}
       <div className="flex flex-col gap-5 items-center md:items-start justify-center w-full md:w-1/2 text-center md:text-left">
         <div className="flex flex-col gap-5 md:gap-10 w-full md:w-4/5 h-auto md:h-[300px] justify-center items-center md:items-start p-2">

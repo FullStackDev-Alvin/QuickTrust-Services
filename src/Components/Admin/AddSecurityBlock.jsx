@@ -36,7 +36,7 @@ const AddSecurityBlock = () => {
 
     try {
       await axios.post(
-        "https://quicktrustservices-i6rr.vercel.app/api/security_solutions/",
+        "http://localhost:5000/api/security_solutions/",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

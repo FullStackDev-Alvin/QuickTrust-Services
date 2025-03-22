@@ -10,11 +10,11 @@ import appartments from "./Services_Icons/icons8-apartment-52.png"
 
 const ListingsSection = ({onspanClick }) => {
   return (
-    <div className="w-full flex flex-col p-5 md:p-10 mt-14 mb-12" id="listings">
+    <div className="w-full flex flex-col p-5 md:p-10 mt-14 mb-12 " id="listings">
       {/* Title Section */}
       <div  className="flex flex-col gap-2 mb-6">
         <div className="flex flex-row justify-start items-center gap-2">
-          <div className="w-[23px] bg-secondary rounded-md h-[40px]"></div>
+          <div className="w-[23px]  bg-secondary rounded-md h-[40px]"></div>
           <h3 className="font-bold text-secondary">Categories</h3>
         </div>
         <h1 className="font-semibold text-2xl md:text-3xl">Browse by Category</h1>
@@ -23,47 +23,47 @@ const ListingsSection = ({onspanClick }) => {
       {/* Services Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {/* Land Acquisition & Sales Card */}
-        <span  onClick={() => onspanClick('land')} className="bg-primary hover:cursor-pointer hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
+        <span  onClick={() =>  onspanClick('land')}  className="bg-primary hover:cursor-pointer hover:scale-90 hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
           <div className="flex flex-col p-4 w-full shadow-lg min-h-[200px] gap-2 justify-center items-center text-center">
             <img src={landAcquisitionIcon} className="w-[60px]" alt="Land Acquisition" />
-            <h2 className="font-semibold text-lg">Land Acquisition & Sales</h2>
-            <p className="text-sm">Expertise in purchasing & selling land</p>
+            <h2 className="font-semibold text-lg  text-bg   ">Land Acquisition & Sales</h2>
+            <p className="text-sm  text-bg ">Expertise in purchasing & selling land</p>
           </div>
         </span>
 
         {/* Construction Materials Card */}
-        <span  onClick={() => onspanClick('construction')} className="bg-primary hover:cursor-pointer hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
+        <span  onClick={() => onspanClick('construction')} className="bg-primary hover:cursor-pointer hover:scale-90 hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
           <div className="flex flex-col p-4 w-full shadow-lg min-h-[200px] gap-2 justify-center items-center text-center">
             <img src={constructionMaterialsIcon} className="w-[60px]" alt="Construction Materials" />
-            <h2 className="font-semibold text-lg">Construction Materials</h2>
-            <p className="text-sm">High-quality construction materials</p>
+            <h2 className="font-semibold text-lg  text-bg ">Construction Materials</h2>
+            <p className="text-sm  text-bg ">High-quality construction materials</p>
           </div>
         </span>
 
         {/* Event Car Rentals Card */}
-        <span  onClick={() => onspanClick('rentals')} className="bg-primary hover:cursor-pointer hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
+        <span  onClick={() => onspanClick('rentals')} className="bg-primary hover:cursor-pointer hover:scale-90 hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
           <div className="flex flex-col p-4 w-full shadow-lg min-h-[200px] gap-2 justify-center items-center text-center">
             <img src={carRentalIcon} className="w-[60px]" alt="Event Car Rentals" />
-            <h2 className="font-semibold text-lg">Event Car Rentals</h2>
-            <p className="text-sm">Professional car rental services for events</p>
+            <h2 className="font-semibold text-lg  text-bg ">Event Car Rentals</h2>
+            <p className="text-sm  text-bg ">Professional car rental services for events</p>
           </div>
         </span>
 
         {/* Security Solutions Card */}
-        <span  onClick={() => onspanClick('security')} className="bg-primary hover:cursor-pointer hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
+        <span  onClick={() => onspanClick('security')} className="bg-primary hover:cursor-pointer hover:scale-90 hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
           <div className="flex flex-col p-4 w-full shadow-lg min-h-[200px] gap-2 justify-center items-center text-center">
             <img src={securitySolutionsIcon} className="w-[60px]" alt="Security Solutions" />
-            <h2 className="font-semibold text-lg">Security Solutions</h2>
-            <p className="text-sm">Offering advanced technology to enhance security</p>
+            <h2 className="font-semibold text-lg  text-bg ">Security Solutions</h2>
+            <p className="text-sm  text-bg ">Offering advanced technology to enhance security</p>
           </div>
         </span>
 
         {/* rentals Card */}
-        <span  onClick={() => onspanClick('appartments')} className="bg-primary hover:cursor-pointer hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
+        <span  onClick={() => onspanClick('appartments')} className="bg-primary hover:cursor-pointer hover:scale-90 hover:bg-secondary hover:text-bg transition-all duration-300 ease-in-out">
           <div className="flex flex-col p-4 w-full shadow-lg min-h-[200px] gap-2 justify-center items-center text-center">
             <img src={appartments} className="w-[60px]" alt="Security Solutions" />
-            <h2 className="font-semibold text-lg">Rental Appartments</h2>
-            <p className="text-sm">Offering The best Appartments for rental</p>
+            <h2 className="font-semibold text-lg text-bg ">Rental Appartments</h2>
+            <p className="text-sm text-bg ">Offering The best Appartments for rental</p>
           </div>
         </span>
       </div>
