@@ -46,7 +46,7 @@ function ContactUs() {
             <p>
               📍 Office Address: [Company Name], [Physical Address]
               <br />
-              📞 Phone:0790003518 
+              📞 Phone:+250 790 003 518 
               <br />
               📧 Email: quicktrustservices@gmail.com
             </p>
@@ -61,7 +61,7 @@ function ContactUs() {
             <p>
               For inquiries about available apartments, pricing, and reservations.
               <br />
-              📞 Phone:0790003518 
+              📞 Phone:+250 790 003 518 
               <br />
               📧 Email: quicktrustservices@gmail.com
             </p>
@@ -98,7 +98,7 @@ function ContactUs() {
               For property owners looking to list their apartments or require hosting
               and maintenance services.
               <br />
-              📞 Phone:0790003518 
+              📞 Phone:+250 790 003 518 
               <br />
               📧 Email: quicktrustservices@gmail.com
             </p>
@@ -114,7 +114,7 @@ function ContactUs() {
               For businesses and property owners interested in marketing services,
               digital promotions, and advertising.
               <br />
-              📞 Phone:0790003518 
+              📞 Phone:+250 790 003 518 
               <br />
               📧 Email: quicktrustservices@gmail.com
             </p>
@@ -129,7 +129,7 @@ function ContactUs() {
             <p>
               For assistance with ongoing rentals, service issues, or complaints.
               <br />
-              📞 Phone:0790003518 
+              📞 Phone:+250 790 003 518 
               <br />
               📧 Email: quicktrustservices@gmail.com
             </p>
@@ -145,7 +145,7 @@ function ContactUs() {
               For real estate agencies, developers, or service providers looking for
               partnership opportunities.
               <br />
-              📞 Phone:0790003518 
+              📞 Phone:+250 790 003 518 
               <br />
               📧 Email: quicktrustservices@gmail.com
             </p>
