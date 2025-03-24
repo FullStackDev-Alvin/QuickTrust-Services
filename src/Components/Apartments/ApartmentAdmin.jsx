@@ -25,7 +25,7 @@ function ApartmentAdmin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/apartments");
+        const response = await axios.get("https://quicktrustservices.vercel.app/api/apartments");
         setData(response.data);
         setLoading(false);
       } catch (err) {
@@ -38,7 +38,7 @@ function ApartmentAdmin() {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/apartments/${id}`);
+      const response = await axios.get(`https://quicktrustservices.vercel.app/api/apartments/${id}`);
       const item = response.data;
       const parsedImages = Array.isArray(item.images) ? item.images : JSON.parse(item.images);
       setSelectedItem({ ...item, images: parsedImages });
@@ -66,7 +66,7 @@ function ApartmentAdmin() {
       formData.append("amenities", editItem.amenities);
       files.forEach((file) => formData.append("images", file));
 
-      await axios.put(`https://quicktrustservices-i6rr.vercel.app/api/apartments/${editItem.id}`, formData, {
+      await axios.put(`https://quicktrustservices.vercel.app/api/apartments/${editItem.id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -83,7 +83,7 @@ function ApartmentAdmin() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://quicktrustservices-i6rr.vercel.app/api/apartments/${id}`);
+      await axios.delete(`https://quicktrustservices.vercel.app/api/apartments/${id}`);
       setData((prevData) => prevData.filter((item) => item.id !== id));
       alert("Apartment deleted successfully.");
     } catch (error) {
