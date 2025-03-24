@@ -12,9 +12,9 @@ const EditNewArrivals = () => {
   return (
     <div>
       <div className="flex space-x-4 p-5">
-        <button onClick={() => setSelectedBlock(1)} className="p-2 bg-gray-200 rounded">Toyota</button>
-        <button onClick={() => setSelectedBlock(2)} className="p-2 bg-gray-200 rounded">Mercedes</button>
-        <button onClick={() => setSelectedBlock(3)} className="p-2 bg-gray-200 rounded">Land</button>
+        <button onClick={() => setSelectedBlock(1)} className="p-2 bg-gray-400 rounded">Toyota</button>
+        <button onClick={() => setSelectedBlock(2)} className="p-2 bg-gray-400 rounded">Mercedes</button>
+        <button onClick={() => setSelectedBlock(3)} className="p-2 bg-gray-400 rounded">Land</button>
       </div>
 
       <UpdateFormNewArivals 

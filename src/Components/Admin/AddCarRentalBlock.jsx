@@ -40,7 +40,7 @@ const AddCarRentalBlock = () => {
     });
 
     try {
-      const response = await axios.post("https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/", formData, {
+      const response = await axios.post("https://quicktrustservices.vercel.app/api/rental_vehicles/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

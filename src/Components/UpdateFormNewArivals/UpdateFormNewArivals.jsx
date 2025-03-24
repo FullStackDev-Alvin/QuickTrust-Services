@@ -58,7 +58,7 @@ const UpdateFormNewArrivals = ({ title, selectedBlock }) => {
 
     try {
       const response = await axios.put(
-        `https://quicktrustservices-i6rr.vercel.app/api/new_arrivals/${selectedBlock}`,
+        `https://quicktrustservices.vercel.app/api/new_arrivals/${selectedBlock}`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },

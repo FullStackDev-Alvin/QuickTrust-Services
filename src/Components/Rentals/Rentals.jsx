@@ -13,7 +13,7 @@ function Rentals() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/");
+        const response = await axios.get("https://quicktrustservices.vercel.app/api/rental_vehicles/");
         console.log(response.data);  // Log the response data
         setData(response.data);
         setLoading(false);
@@ -29,7 +29,7 @@ function Rentals() {
   
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/${id}`);
+      const response = await axios.get(`https://quicktrustservices.vercel.app/api/rental_vehicles/${id}`);
       const item = Array.isArray(response.data) ? response.data[0] : response.data;
       
       if (!item || !item.image) throw new Error("Item or image field is missing");

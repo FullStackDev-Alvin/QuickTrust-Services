@@ -35,7 +35,7 @@ const AddConstructionBlock = () => {
 
     try {
       await axios.post(
-        "https://quicktrustservices-i6rr.vercel.app/api/construction/add",
+        "https://quicktrustservices.vercel.app/api/construction/add",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

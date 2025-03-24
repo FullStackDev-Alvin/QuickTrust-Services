@@ -15,7 +15,7 @@ function ConstructionMaterials() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/construction/");
+        const response = await axios.get("https://quicktrustservices.vercel.app/api/construction/");
         setData(response.data);
       } catch (err) {
         setError(err.message);
@@ -28,7 +28,7 @@ function ConstructionMaterials() {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/construction/${id}`);
+      const response = await axios.get(`https://quicktrustservices.vercel.app/api/construction/${id}`);
       const item = Array.isArray(response.data) ? response.data[0] : response.data;
       
       if (!item || !item.image) throw new Error("Item or image field is missing");

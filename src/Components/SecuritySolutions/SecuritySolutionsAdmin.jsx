@@ -24,7 +24,7 @@ function SecuritySolutionsAdmin() {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/security_solutions/${id}`);
+      const response = await axios.get(`https://quicktrustservices.vercel.app/api/security_solutions/${id}`);
       const item = Array.isArray(response.data) ? response.data[0] : response.data;
       if (!item || !item.image) {
         throw new Error("Item or image field is missing");
@@ -42,7 +42,7 @@ function SecuritySolutionsAdmin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/security_solutions/");
+        const response = await axios.get("https://quicktrustservices.vercel.app/api/security_solutions/");
         setData(response.data);
         setLoading(false);
       } catch (err) {
@@ -71,7 +71,7 @@ function SecuritySolutionsAdmin() {
       files.forEach((file) => formData.append("images", file));
 
       const id = editItem.id || editItem._id;
-      await axios.put(`https://quicktrustservices-i6rr.vercel.app/api/security_solutions/${id}`, formData, {
+      await axios.put(`https://quicktrustservices.vercel.app/api/security_solutions/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -89,7 +89,7 @@ function SecuritySolutionsAdmin() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://quicktrustservices-i6rr.vercel.app/api/security_solutions/${id}`);
+      await axios.delete(`https://quicktrustservices.vercel.app/api/security_solutions/${id}`);
       setData((prevData) => prevData.filter((item) => item.id !== id && item._id !== id));
       alert("Item deleted successfully.");
     } catch (error) {

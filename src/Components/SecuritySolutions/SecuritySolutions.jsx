@@ -14,7 +14,7 @@ function SecuritySolutions() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/security_solutions/");
+        const response = await axios.get("https://quicktrustservices.vercel.app/api/security_solutions/");
         setData(response.data);
       } catch (err) {
         setError(err.message);
@@ -27,7 +27,7 @@ function SecuritySolutions() {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/security_solutions/${id}`);
+      const response = await axios.get(`https://quicktrustservices.vercel.app/api/security_solutions/${id}`);
       const item = Array.isArray(response.data) ? response.data[0] : response.data;
   
       if (!item || !item.image) throw new Error("Item or image field is missing");
