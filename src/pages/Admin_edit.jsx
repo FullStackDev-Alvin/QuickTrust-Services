@@ -16,8 +16,7 @@ const Admin_edit = () => {
     <>
         <Navigation onNavClick={setSelectedComponent} />
         <div className="p-5">
-            {selectedComponent === "rentals" && <AddCarRent
-            alBlock/>}
+            {selectedComponent === "rentals" && <AddCarRentalBlock/>}
             {selectedComponent === "new-listings" && <EditNewArrivals/>}
             {selectedComponent === "land" && <AddLandBlock/>}
             {selectedComponent === "construction" && <AddConstructionBlock/>}
