@@ -14,7 +14,7 @@ const NewArrivals = () => {
   useEffect(() => {
     const fetchBlocks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/new_arrivals");
+        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/new_arrivals");
         setBlocks(response.data);
       } catch (err) {
         setError(err.message);

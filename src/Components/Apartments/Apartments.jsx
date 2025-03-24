@@ -15,7 +15,7 @@ function Apartments() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/apartments");
+        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/apartments");
         setData(response.data);
       } catch (err) {
         setError(err.message);
@@ -28,7 +28,7 @@ function Apartments() {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/apartments/${id}`);
+      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/apartments/${id}`);
       const item = response.data;
       
       if (!item || !item.images) throw new Error("Item or images field is missing");

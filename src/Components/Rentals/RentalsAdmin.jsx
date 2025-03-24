@@ -24,7 +24,7 @@ function RentalsAdmin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/rental_vehicles/");
+        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/");
         setData(response.data);
         setLoading(false);
       } catch (err) {
@@ -38,7 +38,7 @@ function RentalsAdmin() {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/rental_vehicles/${id}`);
+      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/${id}`);
   
       const item = Array.isArray(response.data) ? response.data[0] : response.data;
       if (!item || !item.image) {
@@ -64,7 +64,7 @@ function RentalsAdmin() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/rental_vehicles/${id}`);
+      await axios.delete(`https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/${id}`);
       setData(data.filter((item) => item.id !== id)); // Update local data
       alert("Item deleted successfully.");
     } catch (error) {
@@ -96,7 +96,7 @@ function RentalsAdmin() {
         formData.append("images", file);
       });
 
-      await axios.put(`http://localhost:5000/api/rental_vehicles/${editItem.id}`, formData, {
+      await axios.put(`https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/${editItem.id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

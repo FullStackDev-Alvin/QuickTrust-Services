@@ -10,25 +10,26 @@ function Rentals() {
   const [selectedItem, setSelectedItem] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/rental_vehicles/");
+        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/");
+        console.log(response.data);  // Log the response data
         setData(response.data);
         setLoading(false);
       } catch (err) {
+        console.error(err);  // Log the full error to see what's going wrong
         setError(err.message);
         setLoading(false);
       }
     };
-
+  
     fetchData();
   }, []);
-
+  
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/rental_vehicles/${id}`);
+      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/rental_vehicles/${id}`);
       const item = Array.isArray(response.data) ? response.data[0] : response.data;
       
       if (!item || !item.image) throw new Error("Item or image field is missing");

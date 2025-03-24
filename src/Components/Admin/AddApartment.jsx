@@ -28,7 +28,7 @@ const AddApartment = () => {
     files.forEach((file) => formData.append("images", file));
 
     try {
-      await axios.post("http://localhost:5000/api/apartments/add", formData, {
+      await axios.post("https://quicktrustservices-i6rr.vercel.app/api/apartments/add", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("Apartment added successfully!");
