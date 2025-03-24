@@ -15,7 +15,7 @@ const LandAcquisition = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/land_aquisition/");
+        const response = await axios.get("https://quicktrustservices-i6rr.vercel.app/api/land_aquisition/");
         setData(response.data);
         setLoading(false);
       } catch (err) {
@@ -29,7 +29,7 @@ const LandAcquisition = () => {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/land_aquisition/${id}`);
+      const response = await axios.get(`https://quicktrustservices-i6rr.vercel.app/api/land_aquisition/${id}`);
       
       // If the response is an array, get the first item
       const item = Array.isArray(response.data) ? response.data[0] : response.data;
