@@ -35,8 +35,26 @@ const NewArrivals = () => {
     setSelectedBlock(null);
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return (
+    <div className="flex justify-center items-center w-full py-10">
+      <div className="flex space-x-2">
+        <div className="w-4 h-4 bg-white rounded-full animate-bounce"></div>
+        <div className="w-4 h-4 bg-button rounded-full animate-bounce delay-150"></div>
+        <div className="w-4 h-4 bg-white rounded-full animate-bounce delay-300"></div>
+      </div>
+    </div>
+    );
+    
+    if (error) return (
+      <div className="flex flex-col items-center justify-center h-[400px] text-red-500">
+        <svg className="w-16 h-16 mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M4.293 4.293a1 1 0 011.414 0L12 10.586l6.293-6.293a1 1 0 111.414 1.414L13.414 12l6.293 6.293a1 1 0 01-1.414 1.414L12 13.414l-6.293 6.293a1 1 0 01-1.414-1.414L10.586 12 4.293 5.707a1 1 0 010-1.414z"></path>
+        </svg>
+        <p className="text-lg font-semibold">Oops! Something went wrong.</p>
+        <p className="text-sm text-red-500">{error}</p>
+      </div>
+    );
+  
 
   // Filter blocks by block_id
   const block1 = blocks.find((item) => item.block_id === 1);
@@ -177,10 +195,8 @@ const NewArrivals = () => {
           <h2 className="text-2xl font-semibold text-button mb-2">{selectedBlock.block_title}</h2>
           <p className="text-base text-bg text-center md:text-left">{selectedBlock.block_description}</p>
 
-          <Link
-            to="/contact"
-            className="mt-4 bg-button text-bg w-[120px] text-center py-2 px-4 rounded-lg font-semibold 
-                      hover:bg-primary hover:shadow-lg hover:text-button transition duration-300"
+          <Link to="/contact"
+            className="mt-4 bg-button text-bg w-[120px] text-center py-2 px-4 rounded-lg font-semibold hover:bg-primary hover:shadow-lg hover:text-button transition duration-300"
           >
             Contact Us
           </Link>
