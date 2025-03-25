@@ -16,7 +16,7 @@ const SignIn = () => {
     setError(null);
 
     try {
-      const response = await axios.post("https://quicktrustservices.vercel.app/admin/signin", {
+      const response = await axios.post("http://localhost:5000/admin/signin", {
         email,
         password,
       });
