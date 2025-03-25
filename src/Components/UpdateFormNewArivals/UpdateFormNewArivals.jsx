@@ -83,7 +83,7 @@ const UpdateFormNewArrivals = ({ title, selectedBlock }) => {
             type="text"
             value={formData[selectedBlock]?.title || ""}
             placeholder="Enter title"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
+            className="mt-1 block w-full text-black p-2 border border-gray-300 rounded-lg"
             onChange={handleChange}
           />
         </div>
@@ -94,7 +94,7 @@ const UpdateFormNewArrivals = ({ title, selectedBlock }) => {
             value={formData[selectedBlock]?.description || ""}
             placeholder="Enter description"
             rows="3"
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
+            className="mt-1 block w-full text-black p-2 border border-gray-300 rounded-lg"
             onChange={handleChange}
           ></textarea>
         </div>

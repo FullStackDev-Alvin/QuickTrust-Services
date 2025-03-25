@@ -127,9 +127,9 @@ function ConstructionAdmin() {
             className="h-1/2 w-full object-cover"
             alt={item.title}
           />
-          <h1 className="text-button font-semibold text-lg">{item.title}</h1>
-          <p className="text-white">{item.price_details}</p>
-          <p className="text-white">{item.short_description}</p>
+          <h1 className="text-black font-semibold text-lg">{item.title}</h1>
+          <p className="text-bg">{item.price_details}</p>
+          <p className="text-bg">{item.short_description}</p>
          <div className="w-full flex flex-col gap-[10px] justify-center items-center">
           <button onClick={() => handleEdit(item.id || item._id)} className="bg-button p-2 text-white w-[95%]">
             Edit
@@ -152,22 +152,22 @@ function ConstructionAdmin() {
             <h2 className="text-lg font-bold">Edit Construction Item</h2>
             <input
               type="text"
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded text-black"
               value={editItem.title}
               onChange={(e) => setEditItem({ ...editItem, title: e.target.value })}
             />
             <textarea
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded text-black"
               value={editItem.price_details}
               onChange={(e) => setEditItem({ ...editItem, price_details: e.target.value })}
             />
             <textarea
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded text-black"
               value={editItem.key_features}
               onChange={(e) => setEditItem({ ...editItem, key_features: e.target.value })}
             />
             <textarea
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded text-black"
               value={editItem.short_description}
               onChange={(e) => setEditItem({ ...editItem, short_description: e.target.value })}
             />
@@ -175,7 +175,7 @@ function ConstructionAdmin() {
               type="file"
               multiple
               onChange={(e) => setFiles(Array.from(e.target.files))}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded text-black"
             />
             <button onClick={handleEditSubmit} className="bg-green-500 p-2 text-white mt-2 w-full">
               Save Changes
@@ -218,12 +218,12 @@ function ConstructionAdmin() {
 
       {/* Right section for details */}
       <div className="xl:w-1/2 w-full p-6 flex flex-col gap-4 justify-center">
-        <h1 className="font-bold text-xl md:text-2xl text-text">
+        <h1 className="font-bold text-xl md:text-2xl text-black">
           <span className="text-button font-bold">Title: </span>{selectedItem.title}
         </h1>
-        <p className="text-sm md:text-base"><span className="text-button font-bold">Price Details: </span>{selectedItem.price_details}</p>
-        <p className="text-sm md:text-base"><span className="text-button font-bold">Short Description: </span>{selectedItem.short_description}</p>
-        <p className="text-sm md:text-base"><span className="text-button font-bold">Key Features: </span>{selectedItem.key_features}</p>
+        <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Price Details: </span>{selectedItem.price_details}</p>
+        <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Short Description: </span>{selectedItem.short_description}</p>
+        <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Key Features: </span>{selectedItem.key_features}</p>
 
         <Link to="/contact" className="bg-button p-2 text-sm md:text-base w-[120px] text-center rounded-md hover:bg-primary hover:text-button hover:shadow-lg transition-all duration-200 text-primary font-bold">
           Contact Us

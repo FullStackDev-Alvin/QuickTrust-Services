@@ -187,12 +187,12 @@ function RentalsAdmin() {
 
             {/* Right section for details */}
             <div className="xl:w-1/2 w-full p-6 flex flex-col gap-4 justify-center">
-              <h1 className="font-bold text-xl md:text-2xl text-text">
+              <h1 className="font-bold text-xl md:text-2xl text-black">
                 <span className="text-button font-bold">Car Name: </span>{selectedItem.car_name}
               </h1>
-              <p className="text-sm md:text-base"><span className="text-button font-bold">Details: </span>{selectedItem.rental_details}</p>
-              <p className="text-sm md:text-base"><span className="text-button font-bold">Features: </span>{selectedItem.features}</p>
-              <p className="text-sm md:text-base"><span className="text-button font-bold">Availability: </span>{selectedItem.drop_off_info}</p>
+              <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Details: </span>{selectedItem.rental_details}</p>
+              <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Features: </span>{selectedItem.features}</p>
+              <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Availability: </span>{selectedItem.drop_off_info}</p>
 
               <Link to="/contact" className="bg-button p-2 text-sm md:text-base w-[120px] text-center rounded-md hover:bg-primary hover:text-button hover:shadow-lg transition-all duration-200 text-primary font-bold">
                 Contact Us
@@ -214,7 +214,7 @@ function RentalsAdmin() {
               <label className="text-sm font-semibold">Car Name</label>
               <input
                 type="text"
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border rounded text-black"
                 value={editItem.car_name}
                 onChange={(e) => setEditItem({ ...editItem, car_name: e.target.value })}
               />
@@ -222,7 +222,7 @@ function RentalsAdmin() {
             <div className="mb-4">
               <label className="text-sm font-semibold">Rental Details</label>
               <textarea
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border text-black"
                 value={editItem.rental_details}
                 onChange={(e) => setEditItem({ ...editItem, rental_details: e.target.value })}
               />
@@ -231,7 +231,7 @@ function RentalsAdmin() {
               <label className="text-sm font-semibold">Features</label>
               <input
                 type="text"
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border text-black"
                 value={editItem.features}
                 onChange={(e) => setEditItem({ ...editItem, features: e.target.value })}
               />
@@ -240,7 +240,7 @@ function RentalsAdmin() {
               <label className="text-sm font-semibold">Drop Off Info</label>
               <input
                 type="text"
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border text-black"
                 value={editItem.drop_off_info}
                 onChange={(e) => setEditItem({ ...editItem, drop_off_info: e.target.value })}
               />

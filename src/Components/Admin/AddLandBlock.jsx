@@ -87,7 +87,7 @@ const AddLandBlock = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Title"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -97,7 +97,7 @@ const AddLandBlock = () => {
               value={priceDetails}
               onChange={(e) => setPriceDetails(e.target.value)}
               placeholder="Price"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -107,7 +107,7 @@ const AddLandBlock = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               placeholder="Location"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -117,7 +117,7 @@ const AddLandBlock = () => {
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Description"
               rows="3"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             ></textarea>
           </div>
           <div
@@ -153,7 +153,7 @@ const AddLandBlock = () => {
               onChange={(e) => setDropOffInfo(e.target.value)}
               placeholder="Location for drop off and Pickup"
               rows="3"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             ></textarea>
           </div>
           <button

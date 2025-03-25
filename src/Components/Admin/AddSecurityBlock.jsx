@@ -61,7 +61,7 @@ const AddSecurityBlock = () => {
               placeholder="Product Name"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -71,7 +71,7 @@ const AddSecurityBlock = () => {
               placeholder="Price"
               value={priceDetails}
               onChange={(e) => setPriceDetails(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -81,7 +81,7 @@ const AddSecurityBlock = () => {
               rows="3"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -91,7 +91,7 @@ const AddSecurityBlock = () => {
               rows="3"
               value={features}
               onChange={(e) => setFeatures(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div

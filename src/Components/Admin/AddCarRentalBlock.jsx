@@ -73,7 +73,7 @@ const AddCarRentalBlock = () => {
               placeholder="Brand"
               value={carName}
               onChange={(e) => setCarName(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border border-gray-300 text-black rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -83,7 +83,7 @@ const AddCarRentalBlock = () => {
               placeholder="Price /Hour"
               value={rentalDetails}
               onChange={(e) => setRentalDetails(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border border-gray-300 text-black rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -93,7 +93,7 @@ const AddCarRentalBlock = () => {
               rows="3"
               value={features}
               onChange={(e) => setFeatures(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             ></textarea>
           </div>
           <div
@@ -129,7 +129,7 @@ const AddCarRentalBlock = () => {
               rows="3"
               value={dropOffInfo}
               onChange={(e) => setDropOffInfo(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             ></textarea>
           </div>
           <button

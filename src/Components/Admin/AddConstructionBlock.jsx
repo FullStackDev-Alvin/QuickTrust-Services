@@ -60,7 +60,7 @@ const AddConstructionBlock = () => {
               placeholder="Product Name"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full text-black p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -70,7 +70,7 @@ const AddConstructionBlock = () => {
               placeholder="Price"
               value={priceDetails}
               onChange={(e) => setPriceDetails(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 text-black border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -80,7 +80,7 @@ const AddConstructionBlock = () => {
               rows="3"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full text-black p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -90,7 +90,7 @@ const AddConstructionBlock = () => {
               rows="3"
               value={features}
               onChange={(e) => setFeatures(e.target.value)}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full text-black p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div

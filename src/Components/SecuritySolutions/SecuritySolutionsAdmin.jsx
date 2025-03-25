@@ -130,10 +130,10 @@ function SecuritySolutionsAdmin() {
       alt={item.title || "Item Image"}  // Use the title or a default alt text
     />
     
-    <h1 className="text-button font-semibold text-lg">{item.title}</h1> {/* Title of the item */}
-    <p className="text-white">{item.price_details}</p>  {/* Price details */}
-    <p className="text-white">{item.short_description}</p> {/* Short description */}
-    <p className="text-white">{item.location}</p>  {/* Location (if applicable) */}
+    <h1 className="text-black font-semibold text-lg">{item.title}</h1> {/* Title of the item */}
+    <p className="text-bg">{item.price_details}</p>  {/* Price details */}
+    <p className="text-bg">{item.short_description}</p> {/* Short description */}
+    <p className="text-bg">{item.location}</p>  {/* Location (if applicable) */}
 
     <div className="w-full flex flex-col gap-[10px] justify-center items-center">
       {/* Edit button */}
@@ -161,23 +161,23 @@ function SecuritySolutionsAdmin() {
             <h2 className="text-lg font-bold">Edit Land Aquisition Item</h2>
             <input
               type="text"
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border text-black rounded"
               value={editItem.title}
               onChange={(e) => setEditItem({ ...editItem, title: e.target.value })}
             />
             <input
                 type="text"
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border text-black rounded"
                 value={editItem.key_features}
                 onChange={(e) => setEditItem({ ...editItem, key_features: e.target.value })}
             />
             <textarea
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border text-black rounded"
               value={editItem.price_details}
               onChange={(e) => setEditItem({ ...editItem, price_details: e.target.value })}
             />
             <textarea
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border text-black rounded"
               value={editItem.short_description}
               onChange={(e) => setEditItem({ ...editItem, short_description: e.target.value })}
             />
@@ -229,12 +229,12 @@ function SecuritySolutionsAdmin() {
 
             {/* Right section for details */}
             <div className="xl:w-1/2 w-full p-6 flex flex-col gap-4 justify-center">
-              <h1 className="font-bold text-xl md:text-2xl text-text">
+              <h1 className="font-bold text-xl md:text-2xl text-black">
                 <span className="text-button font-bold">Title: </span>{selectedItem.title}
               </h1>
-              <p className="text-sm md:text-base"><span className="text-button font-bold">Price Details: </span>{selectedItem.price_details}</p>
-              <p className="text-sm md:text-base"><span className="text-button font-bold">Short Description: </span>{selectedItem.short_description}</p>
-              <p className="text-sm md:text-base"><span className="text-button font-bold">Key Features: </span>{selectedItem.key_features}</p>
+              <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Price Details: </span>{selectedItem.price_details}</p>
+              <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Short Description: </span>{selectedItem.short_description}</p>
+              <p className="text-sm md:text-base text-bg"><span className="text-button font-bold">Key Features: </span>{selectedItem.key_features}</p>
 
               {/* You might also need to handle the location and availability, check for correct properties */}
 
