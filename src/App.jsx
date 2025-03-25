@@ -4,6 +4,8 @@ import Footer from "./Components/Footer/Footer";
 import React, { Suspense, lazy } from "react";
 import Loader from "./pages/Loader/Loader"; // Import the updated Loader Component
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute.jsx";
+import ScrollToTop from "./Components/ScrollToTop.js";
+import { animate } from "framer-motion";
 
 // Lazy-load components
 const Home = lazy(() => import("./pages/Home"));
@@ -18,6 +20,7 @@ function App() {
   return (
     <div className="w-full lg:w-[90%] h-auto m-auto bg-bg max-w-screen-xl">
       <Router>
+        <ScrollToTop/>
         <Navbar />
         <Suspense fallback={<Loader />}> {/* Show loader while the components load */}
           <Routes>
